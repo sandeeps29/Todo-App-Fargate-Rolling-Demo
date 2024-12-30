@@ -1,10 +1,10 @@
-FROM nginx:alpine
+FROM public.ecr.aws/nginx/nginx:1.24-alpine
 
 # Copy the static website files
-COPY app/ /usr/share/nginx/html/
+COPY . /usr/share/nginx/html/
 
 # Expose port 80
 EXPOSE 80
 
-# Start Nginx
+# Start nginx
 CMD ["nginx", "-g", "daemon off;"]
