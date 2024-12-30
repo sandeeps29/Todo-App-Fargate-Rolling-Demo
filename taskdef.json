@@ -1,0 +1,20 @@
+{
+  "family": "todo-app",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "containerDefinitions": [
+      {
+          "name": "fargate-demo",
+          "image": "<ECR_REPOSITORY_URI>:latest",
+          "portMappings": [
+              {
+                  "containerPort": 80,
+                  "protocol": "tcp"
+              }
+          ],
+          "essential": true
+      }
+  ]
+}
